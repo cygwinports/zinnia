@@ -1,0 +1,10 @@
+--- origsrc/zinnia-0.06/Makefile.am	2009-05-30 22:35:46.000000000 -0500
++++ src/zinnia-0.06/Makefile.am	2011-10-03 14:06:11.776800200 -0500
+@@ -7,6 +7,7 @@ lib_LTLIBRARIES = libzinnia.la
+ libzinnia_la_SOURCES = feature.h param.cpp recognizer.cpp stream_wrapper.h \
+                       svm.cpp sexp.cpp sexp.h zinnia.h feature.cpp libzinnia.cpp  mmap.h common.h \
+ 		      param.h freelist.h scoped_ptr.h character.cpp svm.h  trainer.cpp
++libzinnia_la_LDFLAGS = -no-undefined
+ include_HEADERS = zinnia.h
+ kgcincludedir = $(includedir)
+ pkginclude_HEADERS = zinnia.h

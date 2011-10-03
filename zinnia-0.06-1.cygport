@@ -1,0 +1,47 @@
+inherit perl python-distutils ruby
+
+DESCRIPTION="Handwriting recognition system"
+HOMEPAGE="http://zinnia.sourceforge.net/"
+SRC_URI="mirror://sourceforge/zinnia/${P}.tar.gz"
+
+PATCH_URI="0.06-bindings-in-tree.patch
+           0.06-no-undefined.patch"
+
+PKG_NAMES="${PN} lib${PN}0 lib${PN}-devel perl-${PN} python-${PN} ruby-${PN}"
+zinnia_CONTENTS="usr/bin/*.exe usr/share/doc/"
+libzinnia0_CONTENTS="usr/bin/cygzinnia-0.dll"
+libzinnia_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
+perl_zinnia_CONTENTS=${PERL_VENDORLIB#/}
+python_zinnia_CONTENTS=${PYTHON_SITELIB#/}
+ruby_zinnia_CONTENTS=${RUBY_VENDORLIB#/}
+
+src_compile() {
+	cd ${S}
+	cygautoreconf
+	cd ${B}
+	cygconf
+	cygmake
+
+	lndirs
+
+	cd ${B}/perl
+	perl_compile
+	cd ${B}/python
+	python_distutils_compile
+	cd ${B}/ruby
+	ruby_ext_compile
+}
+
+src_install() {
+	cd ${B}
+	cyginstall
+	cd ${B}/perl
+	perl_install
+	perl_postinst
+	cd ${B}/python
+	python_distutils_install
+	python_optimize
+	cd ${B}/ruby
+	cyginstall
+}
+

@@ -1,0 +1,8 @@
+category: Python
+requires: libgcc1 libstdc++6 libzinnia0 python
+external-source: zinnia
+sdesc: "Handwriting recognition library (Python bindings)"
+ldesc: "Zinnia is a simple, customizable and portable online hand 
+recognition system based on Support Vector Machines. Zinnia simply 
+receives user pen strokes as a sequence of coordinate data and outputs 
+n-best characters sorted by SVM confidence."

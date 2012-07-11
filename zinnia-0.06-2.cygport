@@ -5,6 +5,7 @@ HOMEPAGE="http://zinnia.sourceforge.net/"
 SRC_URI="mirror://sourceforge/zinnia/${P}.tar.gz"
 
 PATCH_URI="0.06-bindings-in-tree.patch
+           0.06-cflags.patch
            0.06-no-undefined.patch"
 
 PKG_NAMES="${PN} lib${PN}0 lib${PN}-devel perl-${PN} python-${PN} ruby-${PN}"
@@ -45,3 +46,4 @@ src_install() {
 	cyginstall
 }
 
+KEEP_LA_FILES="none"

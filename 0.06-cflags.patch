@@ -1,0 +1,13 @@
+--- origsrc/zinnia-0.06/configure.in	2010-05-09 01:28:57.000000000 -0500
++++ src/zinnia-0.06/configure.in	2012-07-11 02:29:54.267938900 -0500
+@@ -63,8 +63,8 @@ dnl
+ dnl check gcc
+ dnl
+ if test -n "$GCC"; then
+-   CFLAGS="-O3 -Wall"
+-   CXXFLAGS="-O3 -Wall"
++   CFLAGS="$CFLAGS -O3 -Wall"
++   CXXFLAGS="$CXXFLAGS -O3 -Wall"
+    AC_MSG_RESULT($ac_cv_x86_sse)
+ fi
+ 

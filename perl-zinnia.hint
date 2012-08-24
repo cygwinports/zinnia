@@ -1,8 +1,0 @@
-category: Perl
-requires: libgcc1 libssp0 libstdc++6 libzinnia0 perl
-external-source: zinnia
-sdesc: "Handwriting recognition library (Perl bindings)"
-ldesc: "Zinnia is a simple, customizable and portable online hand 
-recognition system based on Support Vector Machines. Zinnia simply 
-receives user pen strokes as a sequence of coordinate data and outputs 
-n-best characters sorted by SVM confidence."

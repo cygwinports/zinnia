@@ -1,8 +1,0 @@
-category: Text
-requires: libzinnia0
-external-source: zinnia
-sdesc: "Handwriting recognition library (development)"
-ldesc: "Zinnia is a simple, customizable and portable online hand 
-recognition system based on Support Vector Machines. Zinnia simply 
-receives user pen strokes as a sequence of coordinate data and outputs 
-n-best characters sorted by SVM confidence."

@@ -2,7 +2,7 @@ inherit perl python-distutils ruby
 
 NAME="zinnia"
 VERSION=0.06
-RELEASE=4
+RELEASE=5
 CATEGORY="Text"
 SUMMARY="Handwriting recognition system"
 DESCRIPTION="Zinnia is a simple, customizable and portable online hand
@@ -25,7 +25,7 @@ perl_zinnia_CONTENTS=${PERL_VENDORLIB#/}
 python_zinnia_CATEGORY="Python"
 python_zinnia_CONTENTS=${PYTHON_SITELIB#/}
 ruby_zinnia_CATEGORY="Ruby"
-ruby_zinnia_CONTENTS=${RUBY_VENDORLIB#/}
+ruby_zinnia_CONTENTS=${RUBY_VENDORARCH#/}
 
 src_compile() {
 	cd ${S}

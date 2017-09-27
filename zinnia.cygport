@@ -2,7 +2,7 @@ inherit perl python2-distutils ruby
 
 NAME="zinnia"
 VERSION=0.06
-RELEASE=8
+RELEASE=9
 CATEGORY="Text"
 SUMMARY="Handwriting recognition system"
 DESCRIPTION="Zinnia is a simple, customizable and portable online hand
@@ -11,17 +11,19 @@ receives user pen strokes as a sequence of coordinate data and outputs
 n-best characters sorted by SVM confidence."
 HOMEPAGE="http://zinnia.sourceforge.net/"
 SRC_URI="mirror://sourceforge/zinnia/${P}.tar.gz"
-
-PATCH_URI="0.06-bindings-in-tree.patch
-           0.06-cflags.patch
-           0.06-no-undefined.patch"
+PATCH_URI="
+	http://pkgs.fedoraproject.org/cgit/rpms/zinnia.git/plain/zinnia-fixes-gcc6-compile.patch
+	0.06-bindings-in-tree.patch
+	0.06-cflags.patch
+	0.06-no-undefined.patch
+"
 
 PKG_NAMES="${PN} lib${PN}0 lib${PN}-devel perl-${PN} python2-${PN} ruby-${PN}"
 zinnia_CONTENTS="usr/bin/*.exe usr/share/doc/"
 libzinnia0_CONTENTS="usr/bin/cygzinnia-0.dll"
 libzinnia_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/"
 perl_zinnia_CATEGORY="Perl"
-perl_zinnia_CONTENTS=${PERL_VENDORLIB#/}
+perl_zinnia_CONTENTS=${PERL_VENDORARCH#/}
 python2_zinnia_CATEGORY="Python"
 python2_zinnia_OBSOLETES="python-zinnia"
 python2_zinnia_CONTENTS=${PYTHON2_SITELIB#/}
@@ -55,5 +57,3 @@ src_install() {
 	cd ${B}/ruby
 	cyginstall
 }
-
-KEEP_LA_FILES="none"

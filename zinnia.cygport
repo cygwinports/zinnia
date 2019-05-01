@@ -2,7 +2,7 @@ inherit perl python2-distutils ruby
 
 NAME="zinnia"
 VERSION=0.06
-RELEASE=9
+RELEASE=10
 CATEGORY="Text"
 SUMMARY="Handwriting recognition system"
 DESCRIPTION="Zinnia is a simple, customizable and portable online hand
@@ -16,6 +16,7 @@ PATCH_URI="
 	0.06-bindings-in-tree.patch
 	0.06-cflags.patch
 	0.06-no-undefined.patch
+	0.06-Wformat-security.patch
 "
 
 PKG_NAMES="${PN} lib${PN}0 lib${PN}-devel perl-${PN} python2-${PN} ruby-${PN}"
